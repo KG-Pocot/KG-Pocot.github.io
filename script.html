@@ -1,0 +1,16 @@
+<script>
+navigator.geolocation.getCurrentPosition((pos) => {
+  const lat = pos.coords.latitude;
+  const lng = pos.coords.longitude;
+
+  window.location.href =
+    `https://www.google.com/maps/search/LTO/@${lat},${lng},16z`;
+
+}, (err) => {
+  alert("Location error: " + err.message);
+}, {
+  enableHighAccuracy: true,
+  timeout: 8000,
+  maximumAge: 30000
+});
+</script>
